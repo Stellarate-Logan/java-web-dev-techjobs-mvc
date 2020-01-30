@@ -9,37 +9,54 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
     <!-- TODO #1 - Use a loop to display job results in a table. -->
-    <table class="job-listing" th:block th:each="jobs:${jobs}">
-        <tr>
-            <th>ID: </th>
-            <td th:text="${jobs.getId()}">ID</td>
+<!--    ou can put each job in its own table, with one job field per row.-->
+    <table class="job-listing">
+        <tbody>
+        <tr th:block th:each="jobs:${jobs}">
+            <td>
+            <p th:text="'ID: ' + ${jobs.getId()}">ID</p>
+            <p th:text="'Name: ' + ${jobs.getName()}">Name:</p>
+            <p th:text="'Emplyer: ' + ${jobs.getEmployer()}">Employer:</p>
+            <p th:text="'Location: ' + ${jobs.getLocation()}">Location:</p>
+            <p th:text="'Position Type: ' + ${jobs.getPositionType()}">Position Type:</p>
+            <p th:text="'Skill: ' + ${jobs.getCoreCompetency()}">Skill:</p>
+            </td>
         </tr>
+        </tbody>
+    </table>
 
-    <tr>
-        <th>Name: </th>
-        <td th:text="${jobs.getName()}">Name:</td>
-    </tr>
+<!--    -->
+<!--    <table class="job-listing" th:block th:each="jobs:${jobs}">-->
+<!--        <tr>-->
+<!--            <th>ID: </th>-->
+<!--            <td th:text="${jobs.getId()}">ID</td>-->
+<!--        </tr>-->
 
-    <tr>
-        <th>Employer: </th>
-        <td th:text="${jobs.getEmployer()}">Employer:</td>
-    </tr>
+<!--    <tr>-->
+<!--        <th>Name: </th>-->
+<!--        <td th:text="${jobs.getName()}">Name:</td>-->
+<!--    </tr>-->
 
-    <tr>
-        <th>Location: </th>
-        <td th:text="${jobs.getLocation()}">Location:</td>
-    </tr>
+<!--    <tr>-->
+<!--    <th>Employer: </th>-->
+<!--    <td th:text="${jobs.getEmployer()}">Employer:</td>-->
+    <!--    </tr>-->
 
-    <tr>
-        <th>Position Type: </th>
-        <td th:text="${jobs.getPositionType()}">Position Type:</td>
-    </tr>
+<!--    <tr>-->
+<!--        <th>Location: </th>-->
+<!--        <td th:text="${jobs.getLocation()}">Location:</td>-->
+<!--    </tr>-->
 
-    <tr>
-        <th>Skill: </th>
-        <td th:text="${jobs.getCoreCompetency()}">Skill:</td>
-    </tr>
-</table>
+<!--    <tr>-->
+<!--        <th>Position Type: </th>-->
+<!--        <td th:text="${jobs.getPositionType()}">Position Type:</td>-->
+<!--    </tr>-->
+
+<!--    <tr>-->
+<!--        <th>Skill: </th>-->
+<!--        <td th:text="${jobs.getCoreCompetency()}">Skill:</td>-->
+<!--    </tr>-->
+<!--</table>-->
 </div>
 
 </body>
